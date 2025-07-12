@@ -393,7 +393,7 @@ pub struct ByteSource<'a> {
 
 impl<'a> ByteSource<'a> {
     #[inline(always)]
-    pub fn new(src: &[u8]) -> ByteSource {
+    pub fn new(src: &'a [u8]) -> ByteSource<'a> {
         ByteSource { slice: src, pos: 0 }
     }
     #[inline(always)]
@@ -1183,7 +1183,7 @@ pub struct Utf16Source<'a> {
 
 impl<'a> Utf16Source<'a> {
     #[inline(always)]
-    pub fn new(src: &[u16]) -> Utf16Source {
+    pub fn new(src: &'a [u16]) -> Utf16Source<'a> {
         Utf16Source { slice: src, pos: 0 }
     }
     #[inline(always)]
@@ -1493,7 +1493,7 @@ pub struct Utf8Source<'a> {
 
 impl<'a> Utf8Source<'a> {
     #[inline(always)]
-    pub fn new(src: &str) -> Utf8Source {
+    pub fn new(src: &'a str) -> Utf8Source<'a> {
         Utf8Source {
             slice: src.as_bytes(),
             pos: 0,
