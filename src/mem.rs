@@ -569,7 +569,7 @@ cfg_if! {
                     }
                 }
             }
-            let mut iter = (&buffer[offset..]).iter();
+            let mut iter = buffer[offset..].iter();
             loop {
                 if let Some(&u) = iter.next() {
                     if u > 0xFF {
@@ -626,7 +626,7 @@ cfg_if! {
                     }
                 }
             }
-            let mut iter = (&buffer[offset..]).iter();
+            let mut iter = buffer[offset..].iter();
             loop {
                 if let Some(&u) = iter.next() {
                     if u > 0xFF {
